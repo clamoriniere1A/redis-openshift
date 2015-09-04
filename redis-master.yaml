@@ -4,12 +4,13 @@ metadata:
   labels:
     name: redis
     redis-sentinel: "true"
+    redis-master: "true"
     role: master
   name: redis-master
 spec:
   containers:
     - name: master
-      image: clamoriniere1a/redis-openshift
+      image: clamoriniere1a/redis-openshift:latest
       env:
         - name: MASTER
           value: "true"
@@ -22,7 +23,7 @@ spec:
         - mountPath: /redis-master-data
           name: data
     - name: sentinel
-      image: clamoriniere1a/redis-openshift
+      image: clamoriniere1a/redis-openshift:latest
       env:
         - name: SENTINEL
           value: "true"

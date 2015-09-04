@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: clamoriniere1a/redis-openshift
+        image: clamoriniere1a/redis-openshift:latest
         ports:
         - containerPort: 6379
         resources:
